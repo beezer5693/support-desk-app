@@ -4,7 +4,8 @@
 	"description": "Support ticket app",
 	"main": "server.js",
 	"scripts": {
-		"start": "node backend/server.js"
+		"start": "node backend/server.js",
+		"server": "node --watch backend/server.js"
 	},
 	"author": "Brandon Bryan",
 	"license": "MIT",
