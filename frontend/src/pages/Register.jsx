@@ -46,7 +46,7 @@ function Register() {
 							name='name'
 							value={name}
 							onChange={onChange}
-							placeholder='Name'
+							placeholder='Enter your name'
 							required
 						/>
 					</div>
@@ -58,7 +58,7 @@ function Register() {
 							name='email'
 							value={email}
 							onChange={onChange}
-							placeholder='Email'
+							placeholder='Enter your email'
 							required
 						/>
 					</div>
@@ -70,7 +70,7 @@ function Register() {
 							name='password'
 							value={password}
 							onChange={onChange}
-							placeholder='Password'
+							placeholder='Enter password'
 							required
 						/>
 					</div>
@@ -82,7 +82,7 @@ function Register() {
 							name='password2'
 							value={password2}
 							onChange={onChange}
-							placeholder='Confirm Password'
+							placeholder='Confirm password'
 							required
 						/>
 					</div>
