@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTicket, closeTicket } from '../features/tickets/ticketSlice';
-import { getNotes, reset as notesReset } from '../features/notes/noteSlice';
+import {
+	getNotes,
+	createNote,
+	reset as notesReset
+} from '../features/notes/noteSlice';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaPlus } from 'react-icons/fa';
@@ -47,6 +51,7 @@ function Ticket() {
 
 		dispatch(getTicket(params.ticketId));
 		dispatch(getNotes(params.ticketId));
+		setNoteText('');
 	}, [isError, message, params.ticketId]);
 
 	// Close ticket
@@ -63,8 +68,8 @@ function Ticket() {
 	// Create note
 	const onNoteSubmit = e => {
 		e.preventDefault();
-
-		console.log('submit');
+		dispatch(createNote({ noteText, ticketId: params.ticketId }));
+		setNoteText('');
 		closeModal();
 	};
 
